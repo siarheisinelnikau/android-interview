@@ -83,3 +83,17 @@
 
 ### Kotlin Coroutines
 * TODO
+
+### Patterns
+* Architecture patterns - MVP, MVC, MVVM, MVI
+* Singleton
+* Multition
+* Facade
+* Abstract Factory
+* Immutable
+* Adapter/Bridge/Proxy, the difference
+* Strategy
+* State
+* Builder
+* Composite
+
