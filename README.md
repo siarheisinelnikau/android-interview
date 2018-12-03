@@ -50,6 +50,14 @@
 * Density
 * App Bundle
 
-
+### Android UI (AndroidX)
+* Method "measure" (RelativeLayout - double measuring issue)
+* Method "layout"
+* draw/onDraw
+* CoordinatorLayout
+* ConstraintLayout
+* Selectors
+* mipmap vs drawable
+* TODO
 
 
