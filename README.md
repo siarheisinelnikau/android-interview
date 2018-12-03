@@ -60,4 +60,6 @@
 * mipmap vs drawable
 * TODO
 
-
+## Dagger2
+* Reason/Benefit
+* Inheritance vs Sub-component
