@@ -97,3 +97,29 @@
 * Builder
 * Composite
 
+### Kotlin
+* Visibility Modifiers (difference between Java for "internal")
+* Class "Any"
+* ArrayList/MutableList/Array
+* Nested and Inner Classes, Anonymous Inner Classes
+* Enum Classes
+* Sealed Classes
+* Operator Overloading
+* Generics - in/out and difference between super/extends in Java, Type projections, Declaration-site variance, Generic functions, Generic constraints, Type erasure
+* open class/final method/override
+* fun method(): Unit - what this code will do?
+* Objects/Companion objects
+* Data Classes/copy()/componentXX()
+* Secondary Constructors
+* "when" keyword
+* Lambda/Closure, Lambda Expressions and Anonymous Functions
+* DSL, @DslMarker
+* inline classes/methods, inline classes vs type aliases
+* Delegates, by Lazy/NonNull/etc, ReadOnlyProperty, ReadWriteProperty, provideDelegate operator
+* KProperty<*>/KClass<*>/KCallable<out R>/KFunction<out R>
+* let/apply/also/run
+* foreach - "until", ".." ("rangeTo"), "downTo", "step", ClosedRange<T>
+* Extensions
+* Exceptions and difference between Java and Kotlin
+* Reflection
+* TODO
