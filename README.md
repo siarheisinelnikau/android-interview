@@ -34,3 +34,10 @@
 * LinkedBlockingQueue/ArrayBlockingQueue/SynchronousQueue/PriorityBlockingQueue/DelayQueue/TransferQueue(LinkedTransferQueue)
 * Semaphore/CountDownLatch/CyclicBarrier/Phaser/Exchanger
 * ConcurrentHashMap/ConcurrentSkipListMap/ConcurrentSkipListSet/CopyOnWriteArrayList/CopyOnWriteArraySet
+
+### DB
+* SQL - select/where/join(left/right/inner/outer/cross)
+* SQLite limitations
+* SQLite - data types
+* Cyrillic issues
+* SQL vs NOSQL
