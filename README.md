@@ -66,12 +66,12 @@
 * mipmap vs drawable
 * TODO
 
-## Dagger2
+### Dagger2
 * Reason/Benefit
 * Inheritance vs Sub-component
 * TODO
 
-## Rx2
+### Rx2
 * Observable/Single/Flowable/MayBe/Completable + XxxSource
 * Subjects - BehaviorSubject/PublishSubject
 * map/flatMap/concatMap
@@ -79,4 +79,7 @@
 * subscribeOn/observeOn
 * compose/lift
 * Schedulers
+* TODO
+
+### Kotlin Coroutines
 * TODO
