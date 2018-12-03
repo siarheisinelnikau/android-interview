@@ -16,3 +16,8 @@
 * Annotations
 * Interface-Marker "Closable"
 * hashcode/equals
+
+### Java Collections
+* List/Collection/Set, what is the difference
+* ArrayList/LinkedList
+* Map/Set/Tree, HashMap/HashSet, AbastractMap/TreeMap/LinkedHashMap
