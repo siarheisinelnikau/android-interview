@@ -41,3 +41,15 @@
 * SQLite - data types
 * Cyrillic issues
 * SQL vs NOSQL
+
+### Android Core
+* Main Thread, lifecycle
+* Looper/Handler/HandlerThread
+* AsyncTask/Loader
+* Application/Activity/ContentProvider(Resolver)/BroadcastReceiver/Service
+* Density
+* App Bundle
+
+
+
+
