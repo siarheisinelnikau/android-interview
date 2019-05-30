@@ -4,6 +4,7 @@
 
 ### OOP
 * What is OOP? (in English, since our native language is Russian)
+* Explain SOLID
 * TODO
 
 ### Algorithms
@@ -15,7 +16,8 @@
 * Visibility Modifiers
 * "static" keyword (inner and nested classes)
 * Annotations
-* Interface-Marker "Closable"
+* Interface-Marker "Clonable"
+* "Closable" issue
 * hashcode/equals
 * TODO
 
