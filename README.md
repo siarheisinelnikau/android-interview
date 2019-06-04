@@ -56,6 +56,7 @@
 * Application/Activity/ContentProvider(Resolver)/BroadcastReceiver/Service
 * Density
 * App Bundle
+* ART vs Dalvik (Ahead of Time vs JIT)
 * TODO
 
 ### Android UI (AndroidX)
