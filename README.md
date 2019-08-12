@@ -5,6 +5,7 @@
 ### OOP
 * What is OOP? (in English, since our native language is Russian)
 * Explain SOLID
+* Class Naming (Why Helper and Manager isn't good names?)
 * TODO
 
 ### Algorithms
@@ -39,10 +40,11 @@
 * LinkedBlockingQueue/ArrayBlockingQueue/SynchronousQueue/PriorityBlockingQueue/DelayQueue/TransferQueue(LinkedTransferQueue)
 * Semaphore/CountDownLatch/CyclicBarrier/Phaser/Exchanger
 * ConcurrentHashMap/ConcurrentSkipListMap/ConcurrentSkipListSet/CopyOnWriteArrayList/CopyOnWriteArraySet
+* Atomic/compareAndSet
 * TODO
 
 ### DB
-* SQL - select/where/join(left/right/inner/outer/cross)
+* SQL - select/where/join(left/right/inner/outer/cross)/group by
 * SQLite limitations
 * SQLite - data types
 * Cyrillic issues
@@ -57,6 +59,8 @@
 * Density
 * App Bundle
 * ART vs Dalvik (Ahead of Time vs JIT)
+* AlarmManager, JobSchedulaer, WorkManager
+* Service limitation
 * TODO
 
 ### Android UI (AndroidX)
@@ -67,11 +71,13 @@
 * ConstraintLayout
 * Selectors
 * mipmap vs drawable
+* Animation in Android, Animation/ViewPropertyAnimator/Animator/Transition, How to Animate Layout Changes
 * TODO
 
 ### Dagger2
 * Reason/Benefit
 * Inheritance vs Sub-component
+* Scope
 * TODO
 
 ### Rx2
@@ -89,6 +95,7 @@
 
 ### Patterns
 * Architecture patterns - MVP, MVC, MVVM, MVI
+* Clean Architecture, Dependency Rules, Communication Between ViewModel and Repository
 * Singleton
 * Multition
 * Facade
