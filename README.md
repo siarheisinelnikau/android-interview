@@ -1,135 +1,112 @@
 ## Questions for interview.
-## Position - Android Developer.
+## Position - Android Developer (j - junior, m - middle, s - senior).
 
 
 ### OOP
-* What is OOP? (in English, since our native language is Russian)
-* Explain SOLID
-* Class Naming (Why Helper and Manager isn't good names?)
-* TODO
+* j What is OOP? (in English, since our native language is Russian)
+* j Explain SOLID
+* m Class Naming (Why Helper and Manager isn't good names?)
+* m How GC works (can it resolve circular dependencies?)
 
 ### Algorithms
-* What is the difference between o(n) and O(n)?
-* TODO
+* s What is the difference between o(n) and O(n)?
 
-### Java Core
-* Class "Object"
-* Visibility Modifiers
-* "static" keyword (inner and nested classes)
-* Annotations
-* Interface-Marker "Clonable"
-* "Closable" issue
-* hashcode/equals
-* TODO
+### Collections
+* m List/Collection/Set, what are the differences
+* m ArrayList/LinkedList
+* m Map/Set/Tree, HashMap/HashSet, AbastractMap/TreeMap/LinkedHashMap
 
-### Java Collections
-* List/Collection/Set, what is the difference
-* ArrayList/LinkedList
-* Map/Set/Tree, HashMap/HashSet, AbastractMap/TreeMap/LinkedHashMap
-* TODO
-
-### Java Multithreading/Concurrency
-* wait/notify
-* Thread.sleep()/Thread.yield()/Thread.join()
-* ThreadLocal
-* Memory Model (happen-before)
-* Memory Consistency Properties
-* "synchronized" block/"volatile" keyword
-* Executors/ExecutorServices - ThreadPoolExecutor/ScheduledThreadPoolExecutor, FutureTask/ForkJoinTask
-* ConcurrentLinkedQueue/ConcurrentLinkedDeqeue
-* LinkedBlockingQueue/ArrayBlockingQueue/SynchronousQueue/PriorityBlockingQueue/DelayQueue/TransferQueue(LinkedTransferQueue)
-* Semaphore/CountDownLatch/CyclicBarrier/Phaser/Exchanger
-* ConcurrentHashMap/ConcurrentSkipListMap/ConcurrentSkipListSet/CopyOnWriteArrayList/CopyOnWriteArraySet
-* Atomic/compareAndSet
-* TODO
-
-### DB
-* SQL - select/where/join(left/right/inner/outer/cross)/group by
-* SQLite limitations
-* SQLite - data types
-* Cyrillic issues
-* SQL vs NOSQL
-* TODO
-
-### Android Core
-* Main Thread, lifecycle
-* Looper/Handler/HandlerThread
-* AsyncTask/Loader
-* Application/Activity/ContentProvider(Resolver)/BroadcastReceiver/Service
-* Density
-* App Bundle
-* ART vs Dalvik (Ahead of Time vs JIT)
-* AlarmManager, JobSchedulaer, WorkManager
-* Service limitation
-* TODO
-
-### Android UI (AndroidX)
-* Method "measure" (RelativeLayout - double measuring issue)
-* Method "layout"
-* draw/onDraw
-* CoordinatorLayout
-* ConstraintLayout
-* Selectors
-* mipmap vs drawable
-* Animation in Android, Animation/ViewPropertyAnimator/Animator/Transition, How to Animate Layout Changes
-* TODO
-
-### Dagger2
-* Reason/Benefit
-* Inheritance vs Sub-component
-* Scope
-* TODO
+### Multithreading/Concurrency
+* s Memory Model (happen-before) and memory consistency properties
+* s wait/notify, why do we need it for "synchronized" block
+* m Thread.sleep()/Thread.yield()/Thread.join()
+* m ThreadLocal, "volatile" keyword
+* m Executors/ExecutorServices - ThreadPoolExecutor/ScheduledThreadPoolExecutor, FutureTask/ForkJoinTask
+* s ConcurrentLinkedQueue/ConcurrentLinkedDeqeue
+* s LinkedBlockingQueue/ArrayBlockingQueue/SynchronousQueue/PriorityBlockingQueue/DelayQueue/TransferQueue(LinkedTransferQueue)
+* s Semaphore/CountDownLatch/CyclicBarrier/Phaser/Exchanger
+* s ConcurrentHashMap/ConcurrentSkipListMap/ConcurrentSkipListSet/CopyOnWriteArrayList/CopyOnWriteArraySet
+* m Atomic/compareAndSet
 
 ### Rx2
-* Observable/Single/Flowable/MayBe/Completable + XxxSource
-* Subjects - BehaviorSubject/PublishSubject
-* map/flatMap/concatMap
-* onErrorReturn
-* subscribeOn/observeOn
-* compose/lift
-* Schedulers
-* TODO
+* m Observable/Single/MayBe/Completable + XxxSource
+* s Flowable and backpressure
+* m Subjects/Processors - BehaviorSubject/PublishSubject
+* m map/flatMap/concatMap, switchMap?
+* m onErrorReturn
+* m subscribeOn/observeOn
+* s compose/lift, when to use?
+* s Schedulers
 
-### Kotlin Coroutines
-* TODO
+### DB
+* s SQL - select/where/join(left/right/inner/outer/cross)/group by
+* s SQLite limitations
+* m SQLite - data types
+* m Cyrillic issues
+* m SQL vs NOSQL
+
+### Room
+* m Benefit
+* s How to declare many-to-many relation?
+
+### Android Core
+* m Main Thread, lifecycle
+* m Looper/Handler/HandlerThread
+* m AsyncTask/Loader
+* j Application/Activity/ContentProvider(Resolver)/BroadcastReceiver/Service
+* m App Bundle
+* m ART vs Dalvik (Ahead of Time vs JIT)
+* s AlarmManager, JobSchedulaer, WorkManager
+* m Service limitations
+
+### Android UI (AndroidX)
+* s Method "measure" (RelativeLayout - double measuring issue)
+* s Method "layout"
+* s draw/onDraw
+* m CoordinatorLayout, ConstraintLayout
+* j Selectors
+* j Density, mipmap vs drawable
+* s Animation in Android, Animation/ViewPropertyAnimator/Animator/Transition, How to Animate Layout Changes
+
+### Dagger2
+* s Reason/Benefit
+* s Inheritance vs Sub-component
+* m Scope
 
 ### Patterns
-* Architecture patterns - MVP, MVC, MVVM, MVI
-* Clean Architecture, Dependency Rules, Communication Between ViewModel and Repository
-* Singleton
-* Multition
-* Facade
-* Abstract Factory
-* Immutable
-* Adapter/Bridge/Proxy, the difference
-* Strategy
-* State
-* Builder
-* Composite
+* m Architecture patterns - MVP, MVC, MVVM, MVI
+* s Clean Architecture, Dependency Rules, Communication Between ViewModel and Repository
+* m Singleton/Multition - why is it so bad?
+* m Facade, abstract factory, immutable, strategy, state, builder, composite
+* s Adapter/bridge/Proxy, the difference
 
 ### Kotlin
-* Visibility Modifiers (difference between Java for "internal")
-* Class "Any"
-* ArrayList/MutableList/Array
-* Nested and Inner Classes, Anonymous Inner Classes
-* Enum Classes
-* Sealed Classes
-* Operator Overloading
-* Generics - in/out and difference between super/extends in Java, Type projections, Declaration-site variance, Generic functions, Generic constraints, Type erasure
-* open class/final method/override
-* fun method(): Unit - what this code will do?
-* Objects/Companion objects
-* Data Classes/copy()/componentXX()
-* Secondary Constructors
-* "when" keyword
-* Lambda/Closure, Lambda Expressions and Anonymous Functions
-* DSL, @DslMarker
-* inline classes/methods, inline classes vs type aliases
-* Delegates, by Lazy/NonNull/etc, ReadOnlyProperty, ReadWriteProperty, provideDelegate operator
-* KProperty<*>/KClass<*>/KCallable<out R>/KFunction<out R>
-* let/apply/also/run
-* foreach - "until", ".." ("rangeTo"), "downTo", "step", ClosedRange<T>
-* Extensions
-* Exceptions and difference between Java and Kotlin
-* Reflection
+* m Visibility Modifiers (difference in java for "internal")
+* m Class "Any"
+* m Data classes/copy()/componentXX(), destructive declaration
+* s Inline classes and limitations; inline classes vs type aliases; inline methods, reified
+* j Objects/Companion objects
+* m Annotations (JvmField, JvmStatic, JvmOverloads, etc.)
+* m hashcode/equals
+* m ArrayList/MutableList/Array
+* m Nested and inner classes, anonymous inner classes
+* m Enum, sealed classes
+* m Operator overloading
+* s Generics - in/out and difference between super/extends in Java, Type projections, Declaration-site variance, Generic functions, Generic constraints, Type erasure
+* j open class/final method/override
+* j fun method(): Unit - what this code will do?
+* m Secondary constructors
+* j "when" keyword
+* m Lambda/closure, lambda expressions and anonymous functions
+* s DSL, @DslMarker
+* m Delegates - by Lazy/NonNull/etc
+* s ReadOnlyProperty, ReadWriteProperty, provideDelegate operator
+* s KProperty<*>/KClass<*>/KCallable<out R>/KFunction<out R>
+* s let/apply/also/run
+* m foreach - "until", ".." ("rangeTo"), "downTo", "step", ClosedRange<T>
+* m Extensions
+* m Exceptions and difference between Java and Kotlin
+* s Reflection
+  
+  ### Kotlin Coroutines
 * TODO
