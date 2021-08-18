@@ -108,5 +108,29 @@
 * m Exceptions and difference between Java and Kotlin
 * s Reflection
   
-  ### Kotlin Coroutines
-* TODO
+### Kotlin Coroutines
+* j What are the coroutines?
+* m What is a suspended function?
+* m What is GlobalScope?
+* m Difference between CoroutineScope & ViewModelScope
+* m Dispatchers (Main/IO/Default)
+* m Will UI be blocked after starting coroutine from UI thread and suspending it?
+* s How uncaught exception propagation differs between launch & async?
+* m How to handle exception?
+* s What is NonCancelable context?
+* m Difference between withTimeout & withTimeoutOrNull
+* m What are coroutines channels? 
+* m What is the difference between buffered & unbuffered channels?
+  
+### Kotlin Flow
+* m What is Kotlin Flow?
+* s Flow cancellation basics
+* m Flow builders
+* m Operators - Intermediate/Size-limiting/Terminal
+* m flowOn
+* m Buffering
+* m Conflation
+* m collectLatest
+* m Flattening (flatMapConcat, flatMapMerge, flatMapLatest, etc.)
+* m Exceptions (+ s Transparent catch)
+
