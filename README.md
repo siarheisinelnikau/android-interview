@@ -98,6 +98,16 @@
 - **s** Hilt components and scopes.
 - **s** Role of `@EntryPoint` and `@InstallIn` annotations.
 
+### Koin
+
+- **m** What is Koin and its benefits over other dependency injection frameworks?
+- **m** Setting up Koin in an Android project.
+- **m** Defining modules and declaring dependencies in Koin.
+- **m** Differences between single, factory, and scoped definitions.
+- **s** How Koin handles scopes and lifecycle in Android.
+- **s** Comparing Koin with Dagger/Hilt: pros and cons.
+- **s** Testing with Koin: Mocking dependencies and writing unit tests.
+
 ### Patterns
 
 - **m** Architecture patterns: MVP, MVC, MVVM, MVI.
