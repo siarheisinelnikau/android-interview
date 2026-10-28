@@ -6,6 +6,8 @@
 
 ## Answer
 
+![A state owner sends UI state down to the UI; user actions return through callbacks.](../../assets/diagrams/unidirectional-data-flow.svg)
+
 Hoist state to the lowest common owner that needs to read or change it, then expose values downward and events upward. A reusable component normally accepts a value and callback; it should not create an unrelated screen ViewModel internally.
 
 ```kotlin

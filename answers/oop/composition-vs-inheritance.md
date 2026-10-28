@@ -6,6 +6,8 @@
 
 ## Answer
 
+![Inheritance: ChartView extends View. Composition: Downloader uses independent RetryPolicy and AuthStrategy collaborators.](../../assets/diagrams/composition-vs-inheritance.svg)
+
 Composition gives an object collaborators; inheritance gives a subtype the behavior and contract of a parent. Prefer composition when behavior varies independently or must be replaced in tests. For example, inject a retry policy into a downloader instead of creating subclasses for every retry and authentication combination.
 
 Inheritance fits a genuine substitutable relationship or a framework extension point such as `View`. The subtype must honor the parent's contract; merely wanting to reuse a few methods is insufficient.

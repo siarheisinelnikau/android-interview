@@ -2,13 +2,13 @@
 
 [Back to questions](../../README.md#kotlin-versions)
 
-**Level:** Senior · **Topic:** Kotlin Versions · **Version:** Kotlin 2.4 · **Reviewed:** 2026-10-28
+**Level:** Senior · **Topic:** Kotlin Versions · **Version:** Kotlin 2.4 · **Reviewed:** 2026-10-29
 
 ## Answer
 
 Kotlin 2.4 stabilizes the core context-parameter feature, allowing named contextual dependencies without the old context-receivers design. The stabilization does not cover every related capability: explicit context arguments and certain callable-reference support remain experimental under the documented release rules.
 
-Implicit resolution searches the surrounding context for suitable types and can be ambiguous when competing candidates are available. Explicit context arguments address some such call-site ambiguity, but currently require their own experimental compiler opt-in.
+Implicit resolution searches the surrounding context for suitable types and can be ambiguous when competing candidates are available. Explicit context arguments address some such call-site ambiguity, but in Kotlin 2.4 require `-Xexplicit-context-arguments`. Core context parameters do not need the former experimental context-parameter flag. Callable references involving context parameters remain experimental too; do not infer their status from the core feature.
 
 During migration, remove obsolete context-receiver configuration and check compiler/plugin support. Separate using stable context parameters from enabling optional experimental syntax. Public APIs should make their contextual requirements understandable; hiding a large service graph in context can reduce the readability that named dependencies were meant to improve.
 

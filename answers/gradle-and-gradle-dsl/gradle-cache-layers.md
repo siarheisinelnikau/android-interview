@@ -6,6 +6,8 @@
 
 ## Answer
 
+![Configuration cache, up-to-date checks, build cache, and incremental task execution avoid different kinds of work.](../../assets/diagrams/gradle-cache-layers.svg)
+
 These mechanisms avoid different work. An up-to-date check uses declared inputs, output state, and execution history to decide that a local task does not need to run. The build cache can restore outputs for matching cacheable work, including after outputs were deleted or on another compatible machine.
 
 The configuration cache stores the configured task graph and required execution state for reuse, avoiding ordinary configuration for a compatible request. It does not store a task's compiled output in place of the build cache.

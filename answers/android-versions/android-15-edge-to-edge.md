@@ -2,7 +2,7 @@
 
 [Back to questions](../../README.md#android-versions)
 
-**Level:** Middle · **Topic:** Android Versions · **Version:** Android 15 (API 35) · **Reviewed:** 2026-10-28
+**Level:** Middle · **Topic:** Android Versions · **Version:** Android 15 (API 35) · **Reviewed:** 2026-10-29
 
 ## Answer
 

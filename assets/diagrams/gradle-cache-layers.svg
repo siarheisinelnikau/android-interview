@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="557" viewBox="0 0 1200 557" role="img" aria-labelledby="title description">
+<title id="title">Gradle mechanisms skip different work</title><desc id="description">A warm no-op build is not evidence about every edit or a cold CI checkout.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="557" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Gradle mechanisms skip different work</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">A warm no-op build is not evidence about every edit or a cold CI checkout.</text>
+<rect x="36" y="124" width="548" height="162" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="158" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">Configuration cache</text>
+<text x="56" y="189" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Reuses the configured task graph</text>
+<text x="56" y="216" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">and the state needed for execution.</text>
+<text x="56" y="243" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Avoids repeating ordinary configuration.</text>
+<rect x="616" y="124" width="548" height="162" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="636" y="158" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">UP-TO-DATE check</text>
+<text x="636" y="189" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Uses local execution history and current</text>
+<text x="636" y="216" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">inputs / outputs to skip unchanged work.</text>
+<text x="636" y="243" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Existing outputs remain in place.</text>
+<rect x="36" y="318" width="548" height="162" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="56" y="352" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Build cache</text>
+<text x="56" y="383" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Restores matching cacheable task outputs</text>
+<text x="56" y="410" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">from a local or remote cache.</text>
+<text x="56" y="437" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Useful even when local outputs are missing.</text>
+<rect x="616" y="318" width="548" height="162" rx="16" fill="#fff4df" stroke="#a15b0b" stroke-width="1.4"/>
+<text x="636" y="352" font-size="22" font-weight="650" text-anchor="start" fill="#a15b0b">Incremental task execution</text>
+<text x="636" y="383" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">The task runs, but a supporting task</text>
+<text x="636" y="410" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">processes only relevant input changes.</text>
+<text x="636" y="437" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">It is not the same as skipping that task.</text>
+<text x="36" y="526" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">The daemon mainly saves JVM startup and warm-up cost; it is another separate mechanism.</text>
+</g></svg>

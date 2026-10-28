@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="564" viewBox="0 0 1200 564" role="img" aria-labelledby="title description">
+<title id="title">Paging with Room as the source of truth</title><desc id="description">The network updates the database; the UI reads database-backed pages.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="564" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Paging with Room as the source of truth</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">The network updates the database; the UI reads database-backed pages.</text>
+<rect x="36" y="142" width="284" height="112" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="176" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">UI / Pager</text>
+<text x="56" y="207" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Requests pages / renders data</text>
+<rect x="458" y="142" width="284" height="112" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="478" y="176" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Room PagingSource</text>
+<text x="478" y="207" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Reads cached rows</text>
+<polyline points="320,170 456,170" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="332" y="153" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">page request</text>
+<polyline points="458,231 322,231" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="349" y="261" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">page data</text>
+<rect x="36" y="377" width="284" height="112" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="411" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">RemoteMediator</text>
+<text x="56" y="442" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Loads missing / refreshed data</text>
+<rect x="458" y="377" width="284" height="112" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="478" y="411" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">Remote API</text>
+<text x="478" y="442" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Returns a page and cursor</text>
+<polyline points="178,254 178,375" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="50" y="325" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">load request</text>
+<polyline points="320,410 456,410" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="367" y="393" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">fetch</text>
+<polyline points="458,466 322,466" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="351" y="498" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">response</text>
+<polyline points="250,377 250,310 600,310 600,256" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="621" y="319" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">write rows + keys</text>
+<rect x="845" y="142" width="319" height="160" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="865" y="176" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Transaction</text>
+<text x="865" y="207" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Commit rows and remote keys</text>
+<text x="865" y="234" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">together; Room invalidation</text>
+<text x="865" y="261" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">refreshes database readers.</text>
+<text x="36" y="540" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">No separate network-result list competes with the database-backed UI state.</text>
+</g></svg>

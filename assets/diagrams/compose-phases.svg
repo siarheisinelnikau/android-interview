@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title description">
+<title id="title">Read state in the phase that needs it</title><desc id="description">A later-phase read can avoid repeating earlier phases when only that phase is invalidated.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="540" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Read state in the phase that needs it</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">A later-phase read can avoid repeating earlier phases when only that phase is invalidated.</text>
+<rect x="36" y="138" width="332" height="130" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="172" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">Composition</text>
+<text x="56" y="203" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">What UI exists</text>
+<text x="56" y="230" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Example: conditionally show a row</text>
+<rect x="434" y="138" width="332" height="130" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="454" y="172" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Layout</text>
+<text x="454" y="203" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Measure and place</text>
+<text x="454" y="230" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Example: offset { position }</text>
+<rect x="832" y="138" width="332" height="130" rx="16" fill="#fff4df" stroke="#a15b0b" stroke-width="1.4"/>
+<text x="852" y="172" font-size="22" font-weight="650" text-anchor="start" fill="#a15b0b">Drawing</text>
+<text x="852" y="203" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Produce pixels</text>
+<text x="852" y="230" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Example: drawBehind { color }</text>
+<polyline points="368,200 432,200" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="766,200 830,200" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="36" y="334" width="1128" height="132" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="56" y="368" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">Observe where the changing value is read</text>
+<text x="56" y="399" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Read inside the placement/draw lambda to defer observation.</text>
+<text x="56" y="426" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Capturing a value already read in composition does not move that earlier read.</text>
+<text x="36" y="509" font-size="19" font-weight="400" text-anchor="start" fill="#52617a">Layout has separate measurement and placement scopes; state changes can restart just placement.</text>
+</g></svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title description">
+<title id="title">Modifier order changes bounds and behavior</title><desc id="description">The same padding value can fall inside or outside a clickable modifier.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="570" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Modifier order changes bounds and behavior</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">The same padding value can fall inside or outside a clickable modifier.</text>
+<text x="36" y="133" font-size="23" font-weight="650" text-anchor="start" fill="#6d45ce">clickable { ... }.padding(16.dp)</text>
+<text x="636" y="133" font-size="23" font-weight="650" text-anchor="start" fill="#087e80">padding(16.dp).clickable { ... }</text>
+<rect x="36" y="164" width="528" height="280" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<rect x="636" y="164" width="528" height="280" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<rect x="100" y="228" width="400" height="152" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<rect x="700" y="228" width="400" height="152" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="300" y="312" font-size="24" font-weight="400" text-anchor="middle" fill="#18243a">Content</text>
+<text x="900" y="312" font-size="24" font-weight="400" text-anchor="middle" fill="#18243a">Content</text>
+<text x="300" y="203" font-size="18" font-weight="400" text-anchor="middle" fill="#6d45ce">Padding is inside the clickable bounds</text>
+<text x="900" y="203" font-size="18" font-weight="400" text-anchor="middle" fill="#52617a">Outer padding is outside those bounds</text>
+<text x="36" y="487" font-size="20" font-weight="650" text-anchor="start" fill="#18243a">Colored area = layout bounds of the clickable modifier.</text>
+<text x="36" y="522" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Illustration of layout bounds, not a pixel-exact hit-test map. Minimum touch-target expansion</text>
+<text x="36" y="548" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">and neighboring targets can affect the effective touch region.</text>
+</g></svg>

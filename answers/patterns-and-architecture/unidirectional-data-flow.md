@@ -8,13 +8,7 @@
 
 In UDF, an owner exposes state to the UI, the UI renders it, and user actions return to the owner. Updates produce the next state instead of letting several widgets mutate competing copies of application data.
 
-```mermaid
-flowchart LR
-    State[UI state] --> UI[Render]
-    UI --> Action[User action]
-    Action --> Owner[State owner]
-    Owner --> State
-```
+![UI state goes from owner to UI; user actions go from UI to owner.](../../assets/diagrams/unidirectional-data-flow.svg)
 
 For example, a filter switch sends an action; the owner updates the filter and resulting data, and the next state renders the screen. This makes transitions easier to test and reason about.
 

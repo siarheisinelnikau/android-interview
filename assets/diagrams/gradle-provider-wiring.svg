@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title description">
+<title id="title">Connect task data through providers</title><desc id="description">A producer output provider carries both the future value and the task relationship.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="450" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Connect task data through providers</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">A producer output provider carries both the future value and the task relationship.</text>
+<rect x="36" y="147" width="330" height="140" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="181" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">GenerateMetadata</text>
+<text x="56" y="212" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">TaskProvider&lt;GenerateMetadata&gt;</text>
+<text x="56" y="239" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Declares an outputFile property</text>
+<rect x="435" y="147" width="330" height="140" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="455" y="181" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Output provider</text>
+<text x="455" y="212" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">generate.flatMap { it.outputFile }</text>
+<text x="455" y="239" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">No early get() required</text>
+<rect x="834" y="147" width="330" height="140" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="854" y="181" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">ValidateMetadata</text>
+<text x="854" y="212" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">inputFile.set(outputProvider)</text>
+<text x="854" y="239" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Declares the file as an input</text>
+<polyline points="366,214 433,214" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="765,214 832,214" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="36" y="347" width="1128" height="70" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="56" y="381" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Gradle schedules the producer before the consumer without a guessed filename-only dependency.</text>
+</g></svg>

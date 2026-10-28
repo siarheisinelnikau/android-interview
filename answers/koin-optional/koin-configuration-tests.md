@@ -6,7 +6,7 @@
 
 ## Answer
 
-With the current compiler-plugin setup, enable compile-time validation for the assembled entry-point graphs and keep compatible Kotlin/plugin versions. For classic configurations, use the supported verification API and test the actual combinations of modules, qualifiers, runtime parameters, and scopes. Deprecated `checkModules` examples should not be copied blindly.
+With the current compiler-plugin setup, enable compile-time validation for the assembled entry-point graphs and keep compatible Kotlin/plugin versions. A library module without an entry point is checked when a consuming entry point assembles its graph; successful compilation of that library alone does not prove its dependencies are complete. For classic configurations, use the supported verification API and test the actual combinations of modules, qualifiers, runtime parameters, and scopes. Deprecated `checkModules` examples should not be copied blindly.
 
 For a behavior test, build a local test container with fake bindings or override the selected definitions deliberately. Resolve the system under test and exercise it; checking that a graph can be constructed does not prove that it behaves correctly.
 
@@ -15,4 +15,5 @@ Isolate containers between tests and close them afterward. Avoid a shared global
 ## References
 
 - [Koin: unit testing](https://insert-koin.io/docs/reference/koin-test/testing/)
-- [Koin: verification migration](https://lts.insert-koin.io/docs/reference/koin-test/verify/)
+- [Koin: current configuration verification](https://insert-koin.io/docs/reference/koin-test/verify/)
+- [Koin: compiler-plugin validation and compatibility changes](https://insert-koin.io/docs/support/releases/)

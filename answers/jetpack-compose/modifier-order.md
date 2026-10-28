@@ -6,6 +6,8 @@
 
 ## Answer
 
+![Click before padding includes padding in clickable layout bounds; padding before click leaves that padding outside those bounds.](../../assets/diagrams/compose-modifier-order.svg)
+
 Modifiers wrap and transform layout, input, drawing, and semantics in the order applied, so their order is part of the component's behavior.
 
 ```kotlin

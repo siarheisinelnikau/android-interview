@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title description">
+<title id="title">State goes down; user actions go up</title><desc id="description">One owner produces the state rendered by a reusable UI.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="450" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">State goes down; user actions go up</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">One owner produces the state rendered by a reusable UI.</text>
+<rect x="36" y="174" width="350" height="140" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="208" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">State owner</text>
+<text x="56" y="239" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">ViewModel or UI state holder</text>
+<text x="56" y="266" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Handles actions and updates state</text>
+<rect x="814" y="174" width="350" height="140" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="834" y="208" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">UI</text>
+<text x="834" y="239" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Renders current values</text>
+<text x="834" y="266" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Reports user actions</text>
+<polyline points="386,205 812,205" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="566" y="184" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">UI state</text>
+<polyline points="814,278 388,278" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="485" y="312" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">User action / callback</text>
+<rect x="36" y="356" width="1128" height="62" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="56" y="390" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">Example: onFilterChanged(true) → update filter state → render the checked switch.</text>
+</g></svg>

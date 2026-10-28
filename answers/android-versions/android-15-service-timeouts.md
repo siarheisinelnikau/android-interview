@@ -2,11 +2,11 @@
 
 [Back to questions](../../README.md#android-versions)
 
-**Level:** Senior · **Topic:** Android Versions · **Version:** Android 15 (API 35) · **Reviewed:** 2026-10-28
+**Level:** Senior · **Topic:** Android Versions · **Version:** Android 15 (API 35) · **Reviewed:** 2026-10-29
 
 ## Answer
 
-For apps targeting API 35 on Android 15, background execution time for `dataSync` and `mediaProcessing` foreground services is limited. Each type has its own cumulative allowance, documented as six hours within a 24-hour period, shared across the app's services of that type. User foreground interaction affects the timer rules.
+For apps targeting API 35 on Android 15, background execution time for `dataSync` and `mediaProcessing` foreground services is limited. Each type has its own cumulative allowance, documented as six hours within a 24-hour period, shared across the app's services of that type. Bringing the app to the foreground resets the allowance. Starting another service of the same type does not create a fresh budget.
 
 When the allowance expires, `Service.onTimeout(int, int)` gives the service a short opportunity to stop itself. Persist progress, end work promptly, and call `stopSelf()`; ignoring the callback can cause a service failure.
 

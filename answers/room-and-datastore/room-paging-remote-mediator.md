@@ -8,15 +8,7 @@
 
 Use Room as the UI's source of truth. A DAO provides a `PagingSource`, while `RemoteMediator` fetches missing or refreshed pages and writes them into the database. Database invalidation then updates the paged UI.
 
-```mermaid
-flowchart LR
-    UI --> Pager
-    Pager --> Room
-    Pager --> Mediator[RemoteMediator]
-    Mediator --> API
-    API --> Mediator
-    Mediator -->|transaction: rows + remote keys| Room
-```
+![Pager reads Room pages. RemoteMediator fetches from an API and commits rows and remote keys in one database transaction.](../../assets/diagrams/room-paging-source-of-truth.svg)
 
 Store page keys or cursors with the records in one transaction so an interrupted update cannot leave inconsistent pagination metadata. Define refresh policy, end-of-pagination behavior, and cache lifetime. Surface refresh and append errors separately, preserving cached content when possible. Do not independently merge network results into the UI list while also treating Room as authoritative.
 

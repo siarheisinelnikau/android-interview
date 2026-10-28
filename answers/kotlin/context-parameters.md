@@ -2,7 +2,7 @@
 
 [Back to questions](../../README.md#kotlin)
 
-**Level:** Senior · **Topic:** Kotlin
+**Level:** Senior · **Topic:** Kotlin · **Reviewed:** 2026-10-29
 
 ## Answer
 
@@ -17,7 +17,7 @@ fun recordOpened(id: Long) {
 
 An extension receiver primarily adds receiver-style callable syntax to one type. Ordinary explicit parameters keep every argument visible in each call. Context parameters can reduce repetitive passing for consistently available capabilities, but they introduce contextual resolution and possible ambiguity.
 
-They replace the older experimental context receivers design rather than merely renaming its syntax. Use them when the surrounding dependency context is clear, and check the exact Kotlin release and the status of related capabilities such as explicit context arguments.
+Core context parameters are stable from Kotlin 2.4. They replace the older experimental context receivers design rather than merely renaming its syntax. Use them when the surrounding dependency context is clear, and check the exact Kotlin release and the status of related capabilities such as explicit context arguments.
 
 ## References
 

@@ -7,6 +7,8 @@ Review dates for version-specific questions are recorded in their answers. Check
 
 Each question links to a self-contained answer in [answers/](answers/README.md), with examples and primary-source references.
 
+All 270 answers were reviewed on **2026-10-29**. See [version notes](docs/version-notes.md) for the Kotlin, Android, AGP, and Compose baseline. Illustrated answers include local SVG diagrams that display directly on GitHub.
+
 ---
 
 ### OOP

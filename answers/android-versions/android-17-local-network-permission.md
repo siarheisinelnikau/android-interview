@@ -2,15 +2,15 @@
 
 [Back to questions](../../README.md#android-versions)
 
-**Level:** Middle · **Topic:** Android Versions · **Version:** Android 17 (API 37) · **Reviewed:** 2026-10-28
+**Level:** Middle · **Topic:** Android Versions · **Version:** Android 17 (API 37) · **Reviewed:** 2026-10-29
 
 ## Answer
 
 On Android 17, apps targeting API 37 need `ACCESS_LOCAL_NETWORK` for broad LAN communication; `INTERNET` alone no longer authorizes that access. Restrictions apply below individual HTTP libraries, so switching from OkHttp to raw sockets does not avoid them.
 
-Use a system-mediated picker when the task only needs a user-selected device. Supported examples include the Cast output switcher and NsdManager's service picker for appropriate mDNS discovery. Broad IoT scanning may still need the runtime permission.
+Use a system-mediated picker when the task only needs a user-selected device. Supported examples include the Cast output switcher and NsdManager's service picker for appropriate mDNS discovery. The NsdManager picker uses `DiscoveryRequest.FLAG_SHOW_PICKER`; its grant covers the selected service, not arbitrary LAN scanning. Broad IoT scanning still needs the runtime permission.
 
-Request access in context, handle denial and revocation, and audit SDK traffic as well as app code. The Android 16 opt-in used a different temporary permission arrangement; do not copy that setup into an API-37 migration without checking the current documentation.
+Declare and request `ACCESS_LOCAL_NETWORK` in context, handle denial and revocation, and audit SDK traffic as well as app code. On Android 17, targets of 36 or lower keep implicit LAN access through `INTERNET`; do not request the new permission for that lower-target case. The Android 16 opt-in used a different temporary permission arrangement; do not copy that setup into an API-37 migration without checking the current documentation.
 
 ## References
 

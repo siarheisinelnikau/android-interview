@@ -6,6 +6,8 @@
 
 ## Answer
 
+![A task output provider connects GenerateMetadata to ValidateMetadata without forcing early realization.](../../assets/diagrams/gradle-provider-wiring.svg)
+
 A Provider represents a value that can be supplied later and may carry information about the work producing it. A Property is a configurable provider-backed value. `map` transforms a value, while `flatMap` connects to another provider without producing a nested provider.
 
 `convention` supplies a default used unless the property is explicitly configured. `set` assigns a value or provider; setting another provider can preserve a live dependency relationship rather than taking an early snapshot.

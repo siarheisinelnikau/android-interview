@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="435" viewBox="0 0 1200 435" role="img" aria-labelledby="title description">
+<title id="title">Dependency inversion</title><desc id="description">Business policy and infrastructure meet at a small interface.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="435" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Dependency inversion</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Business policy and infrastructure meet at a small interface.</text>
+<rect x="36" y="145" width="314" height="130" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="179" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">Checkout</text>
+<text x="56" y="210" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Business policy</text>
+<text x="56" y="237" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Needs a payment capability</text>
+<rect x="443" y="145" width="314" height="130" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="463" y="179" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">PaymentGateway</text>
+<text x="463" y="210" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Interface owned by the</text>
+<text x="463" y="237" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">policy-facing contract</text>
+<rect x="850" y="145" width="314" height="130" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="870" y="179" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">HttpPaymentGateway</text>
+<text x="870" y="210" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Infrastructure implementation</text>
+<text x="870" y="237" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Uses an HTTP client</text>
+<polyline points="350,205 441,205" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="370" y="189" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">uses</text>
+<polyline points="850,205 760,205" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#inherits)" stroke-dasharray="7 5"/>
+<text x="765" y="184" font-size="15" font-weight="400" text-anchor="start" fill="#52617a">implements</text>
+<rect x="36" y="321" width="1128" height="76" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="56" y="355" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">At runtime, inject an implementation into Checkout. No container lookup is needed.</text>
+</g></svg>

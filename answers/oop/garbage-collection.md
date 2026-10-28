@@ -6,6 +6,8 @@
 
 ## Answer
 
+![A singleton retains a destroyed Activity through a strong reference. An unreachable A-B cycle remains eligible for collection.](../../assets/diagrams/gc-reachability.svg)
+
 A tracing garbage collector starts at GC roots, such as reachable thread stacks and runtime-held references, and follows strong references. Objects that cannot be reached are eligible for collection, including an entire unreachable cycle. Reference counting alone has difficulty with cycles; tracing collectors do not require every reference count to reach zero.
 
 An Android leak usually means an unwanted object is still reachable: a singleton holding an Activity keeps that Activity and its View tree alive. The collector cannot infer that the application no longer needs them.

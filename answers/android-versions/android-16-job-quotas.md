@@ -2,7 +2,7 @@
 
 [Back to questions](../../README.md#android-versions)
 
-**Level:** Senior · **Topic:** Android Versions · **Version:** Android 16 (API 36) · **Reviewed:** 2026-10-28
+**Level:** Senior · **Topic:** Android Versions · **Version:** Android 16 (API 36) · **Reviewed:** 2026-10-29
 
 ## Answer
 

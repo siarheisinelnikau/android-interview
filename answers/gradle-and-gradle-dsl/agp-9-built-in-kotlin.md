@@ -6,11 +6,13 @@
 
 ## Answer
 
-AGP 9.0 enables built-in Kotlin for Android projects by default. It replaces the kotlin-android plugin integration, so applying `org.jetbrains.kotlin.android` alongside that enabled mode is not the migration strategy. Move legacy `android.kotlinOptions` configuration to the supported `kotlin.compilerOptions` DSL.
+AGP 9.0 enables built-in Kotlin by default for Android modules. Remove `org.jetbrains.kotlin.android` when using that mode. Built-in support supplies the Android integration; it does not mean every AGP release uses the newest Kotlin compiler. Check the resolved KGP version and compiler-plugin compatibility separately.
 
-The ordinary kotlin-kapt plugin is incompatible with built-in Kotlin. Prefer a supported KSP processor; if migration is not yet possible, the documented `com.android.legacy-kapt` plugin uses the AGP version. This does not mean an arbitrary Java processor can be converted merely by renaming its configuration.
+Move `android.kotlinOptions` to `kotlin.compilerOptions`. With built-in Kotlin, `jvmTarget` defaults to `android.compileOptions.targetCompatibility`. Additional Kotlin source directories must use `android.sourceSets[...].kotlin`, rather than `kotlin.sourceSets` or the Java source directory set.
 
-Other Kotlin compiler plugins, such as Compose or serialization, still need compatible configuration. KMP libraries use the multiplatform plugin together with the Android KMP library plugin; do not assume built-in Kotlin replaces the entire multiplatform toolchain. Check convention plugins and third-party integrations, and treat temporary opt-outs as version-specific migration tools rather than permanent compatibility guarantees.
+The ordinary `org.jetbrains.kotlin.kapt` plugin is incompatible with built-in Kotlin. Prefer a processor supporting KSP; otherwise use the documented `com.android.legacy-kapt` bridge with the **AGP** version. Other compiler plugins, including Compose and serialization, still need compatible setup.
+
+KMP libraries use `org.jetbrains.kotlin.multiplatform` with `com.android.kotlin.multiplatform.library`; built-in Android Kotlin does not replace the multiplatform toolchain. Separating an Android application module from shared KMP code avoids applying `com.android.application` alongside the multiplatform plugin in one module. Audit convention plugins and third-party integrations before removing temporary opt-outs.
 
 ## References
 

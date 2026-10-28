@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title description">
+<title id="title">Garbage collection follows reachability</title><desc id="description">A cycle can be collected; a reachable obsolete screen is still retained.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="510" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Garbage collection follows reachability</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">A cycle can be collected; a reachable obsolete screen is still retained.</text>
+<rect x="36" y="130" width="260" height="112" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="164" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">GC roots</text>
+<text x="56" y="195" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Runtime / live stack</text>
+<rect x="390" y="130" width="338" height="112" rx="16" fill="#fff4df" stroke="#a15b0b" stroke-width="1.4"/>
+<text x="410" y="164" font-size="22" font-weight="650" text-anchor="start" fill="#a15b0b">Application singleton</text>
+<text x="410" y="195" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Stores an old Activity</text>
+<rect x="822" y="130" width="342" height="112" rx="16" fill="#fcecef" stroke="#b33e51" stroke-width="1.4"/>
+<text x="842" y="164" font-size="22" font-weight="650" text-anchor="start" fill="#b33e51">Destroyed Activity</text>
+<text x="842" y="195" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Still strongly reachable</text>
+<polyline points="296,186 388,186" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="728,186 820,186" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="190" y="328" width="254" height="92" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="210" y="362" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Object A</text>
+<rect x="694" y="328" width="254" height="92" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="714" y="362" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Object B</text>
+<polyline points="444,352 692,352" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="500" y="338" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">strong reference</text>
+<polyline points="694,396 446,396" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="500" y="422" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">strong reference</text>
+<text x="36" y="286" font-size="19" font-weight="400" text-anchor="start" fill="#b33e51">The collector cannot infer that this Activity is no longer wanted.</text>
+<text x="36" y="475" font-size="19" font-weight="400" text-anchor="start" fill="#087e80">No path from a GC root to A or B: both are eligible for collection despite the cycle.</text>
+</g></svg>

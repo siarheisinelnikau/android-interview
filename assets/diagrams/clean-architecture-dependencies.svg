@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="435" viewBox="0 0 1200 435" role="img" aria-labelledby="title description">
+<title id="title">Source dependencies point toward policy</title><desc id="description">Runtime calls can go outward through an interface while source dependencies point inward.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="435" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Source dependencies point toward policy</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Runtime calls can go outward through an interface while source dependencies point inward.</text>
+<rect x="36" y="145" width="314" height="130" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="179" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">UI / presentation</text>
+<text x="56" y="210" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Android screen and ViewModel</text>
+<text x="56" y="237" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Adapts user interaction</text>
+<rect x="443" y="145" width="314" height="130" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="463" y="179" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Domain</text>
+<text x="463" y="210" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Policy and contracts</text>
+<text x="463" y="237" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">No Android / Retrofit types</text>
+<rect x="850" y="145" width="314" height="130" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="870" y="179" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">Data / infrastructure</text>
+<text x="870" y="210" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Network and database adapters</text>
+<text x="870" y="237" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Implements domain contracts</text>
+<polyline points="350,205 441,205" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="850,205 760,205" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="36" y="321" width="1128" height="76" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="56" y="355" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">The arrows show source-code dependencies, not a network request or a UI event sequence.</text>
+</g></svg>

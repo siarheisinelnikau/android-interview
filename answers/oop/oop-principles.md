@@ -6,6 +6,8 @@
 
 ## Answer
 
+![Four OOP principles: encapsulation, abstraction, inheritance, and polymorphism, with concrete examples.](../../assets/diagrams/oop-principles.svg)
+
 Object-oriented programming models a system as cooperating objects that combine state and behavior. A class defines a type; an object is an instance of it.
 
 Encapsulation protects an object's invariants, abstraction exposes the operations callers need, inheritance expresses a subtype relationship, and polymorphism lets callers use different implementations through the same contract. These ideas do not require deep inheritance trees.

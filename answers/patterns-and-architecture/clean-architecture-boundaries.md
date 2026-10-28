@@ -8,11 +8,7 @@
 
 The dependency rule directs source-code dependencies toward more stable policy. Domain behavior should not need an Activity, Retrofit response, or SQLite cursor merely to express a business rule. Interfaces allow data/framework implementations to satisfy inward-facing contracts.
 
-```mermaid
-flowchart LR
-    UI --> Domain[Domain contracts and policy]
-    Data[Storage/network implementations] --> Domain
-```
+![UI and infrastructure source dependencies point toward domain policy and contracts.](../../assets/diagrams/clean-architecture-dependencies.svg)
 
 Draw module boundaries around ownership, independent change, reuse, and build constraints. Map transport and persistence models where that protects useful contracts; do not create identical models and forwarding layers automatically.
 

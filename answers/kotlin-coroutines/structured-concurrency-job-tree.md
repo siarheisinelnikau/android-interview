@@ -8,13 +8,7 @@
 
 A CoroutineScope supplies a context, typically including a Job and dispatcher. Builders create child coroutines in that ownership structure. Parents wait for children to complete, and cancellation propagates downward; ordinary child failures can also fail their parent.
 
-```mermaid
-flowchart TD
-    Owner[Owner Job] --> Load[Load child]
-    Owner --> Observe[Observe child]
-    Load --> First[First request]
-    Load --> Second[Second request]
-```
+![Owner Job with load and observe children; two requests belong to the load child. Cancellation follows the Job tree.](../../assets/diagrams/structured-concurrency.svg)
 
 This structure lets a caller reason about when related work ends. Replacing the parent Job or launching in an unrelated scope can detach work and defeat those guarantees.
 

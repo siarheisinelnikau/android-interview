@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="568" viewBox="0 0 1200 568" role="img" aria-labelledby="title description">
+<title id="title">Inheritance and composition</title><desc id="description">Choose a substitutable subtype for an is-a relationship; compose independently varying behavior.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="568" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Inheritance and composition</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Choose a substitutable subtype for an is-a relationship; compose independently varying behavior.</text>
+<rect x="36" y="114" width="548" height="374" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<rect x="616" y="114" width="548" height="374" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="60" y="151" font-size="19" font-weight="700" text-anchor="start" fill="#6d45ce">INHERITANCE · is-a</text>
+<rect x="184" y="181" width="252" height="82" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="204" y="215" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">View</text>
+<rect x="184" y="345" width="252" height="82" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="204" y="379" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">ChartView</text>
+<polyline points="310,345 310,266" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#inherits)"/>
+<text x="332" y="311" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">extends</text>
+<text x="60" y="463" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">A ChartView must honor the View contract.</text>
+<text x="640" y="151" font-size="19" font-weight="700" text-anchor="start" fill="#087e80">COMPOSITION · has-a / uses</text>
+<rect x="766" y="181" width="252" height="82" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="786" y="215" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Downloader</text>
+<rect x="640" y="345" width="238" height="82" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="660" y="379" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">RetryPolicy</text>
+<rect x="902" y="345" width="238" height="82" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="922" y="379" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">AuthStrategy</text>
+<polyline points="825,263 825,302 759,302 759,343" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="959,263 959,302 1021,302 1021,343" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="853" y="302" font-size="17" font-weight="400" text-anchor="middle" fill="#52617a">uses</text>
+<text x="640" y="463" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Replace collaborators without subclass combinations.</text>
+<text x="36" y="526" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Arrows: hollow triangle points to a supertype; solid arrows show collaborator use.</text>
+<text x="36" y="553" font-size="17" font-weight="400" text-anchor="start" fill="#52617a">The uses arrows do not assert exclusive UML ownership or identical object lifetimes.</text>
+</g></svg>

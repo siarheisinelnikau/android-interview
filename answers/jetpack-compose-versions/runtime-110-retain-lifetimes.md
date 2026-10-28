@@ -2,11 +2,13 @@
 
 [Back to questions](../../README.md#jetpack-compose-versions)
 
-**Level:** Middle · **Topic:** Jetpack Compose Versions · **Reviewed:** 2026-10-28
+**Level:** Middle · **Topic:** Jetpack Compose Versions · **Reviewed:** 2026-10-29
 
 ## Answer
 
-`remember` keeps a value while its composition identity remains. `retain`, available from Runtime 1.10's retain artifact with supporting UI integration, can preserve a non-serialized instance across configuration recreation, but not process death. Unused retained values are retired when their owning content is permanently removed.
+![Retain and ViewModel preserve an instance across configuration recreation; saved state reconstructs values after supported process restoration.](../../assets/diagrams/state-lifetimes.svg)
+
+`remember` keeps a value while its composition identity remains. `retain` is available in `androidx.compose.runtime:runtime-retain` from 1.10; retaining across configuration changes also requires the supporting Compose UI integration from 1.10. It preserves a non-serialized instance across configuration recreation, but not process death. Unused retained values are retired when their owning content is permanently removed.
 
 `rememberSaveable` serializes a supported representation for saved-state restoration. A ViewModel belongs to a ViewModelStore owner and provides a suitable home for screen logic, coroutine ownership, and saved-state/DI integrations.
 

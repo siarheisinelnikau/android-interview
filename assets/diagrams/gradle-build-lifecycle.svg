@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title description">
+<title id="title">Gradle: structure, configuration, work</title><desc id="description">Task registration and task execution happen at different points.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker><marker id="inherits" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1 1 L 11 6 L 1 11 z" fill="white" stroke="#718096" stroke-width="1.2"/></marker></defs>
+<rect width="1200" height="520" rx="22" fill="#f7f9fd"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#18243a">
+<text x="36" y="49" font-size="29" font-weight="700" text-anchor="start" fill="#18243a">Gradle: structure, configuration, work</text>
+<text x="36" y="82" font-size="18" font-weight="400" text-anchor="start" fill="#52617a">Task registration and task execution happen at different points.</text>
+<rect x="36" y="138" width="332" height="157" rx="16" fill="#f0ebfc" stroke="#6d45ce" stroke-width="1.4"/>
+<text x="56" y="172" font-size="22" font-weight="650" text-anchor="start" fill="#6d45ce">Initialization</text>
+<text x="56" y="203" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Read settings</text>
+<text x="56" y="230" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Discover projects / included builds</text>
+<text x="56" y="257" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Establish build structure</text>
+<rect x="434" y="138" width="332" height="157" rx="16" fill="#e6f5f2" stroke="#087e80" stroke-width="1.4"/>
+<text x="454" y="172" font-size="22" font-weight="650" text-anchor="start" fill="#087e80">Configuration</text>
+<text x="454" y="203" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Apply plugins / evaluate scripts</text>
+<text x="454" y="230" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Configure required tasks</text>
+<text x="454" y="257" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Establish the task graph</text>
+<rect x="832" y="138" width="332" height="157" rx="16" fill="#fff4df" stroke="#a15b0b" stroke-width="1.4"/>
+<text x="852" y="172" font-size="22" font-weight="650" text-anchor="start" fill="#a15b0b">Execution</text>
+<text x="852" y="203" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Run selected tasks / dependencies</text>
+<text x="852" y="230" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Check up-to-date state and caches</text>
+<text x="852" y="257" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Execute required task actions</text>
+<polyline points="368,209 432,209" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="766,209 830,209" fill="none" stroke="#718096" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="36" y="355" width="1128" height="108" rx="16" fill="#ffffff" stroke="#d7deea" stroke-width="1.4"/>
+<text x="56" y="389" font-size="22" font-weight="650" text-anchor="start" fill="#18243a">Configuration-cache reuse</text>
+<text x="56" y="420" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">A compatible cached graph can bypass ordinary project configuration.</text>
+<text x="56" y="447" font-size="19" font-weight="400" text-anchor="start" fill="#18243a">Top-level build-script I/O still runs on a cache miss, even for an unrelated task.</text>
+</g></svg>

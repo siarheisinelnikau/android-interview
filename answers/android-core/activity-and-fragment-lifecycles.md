@@ -8,13 +8,7 @@
 
 An Activity usually moves through `onCreate`, `onStart`, and `onResume` as it becomes interactive, then `onPause` and `onStop` as it leaves the foreground. Destruction can mean finishing or recreation; process termination may happen without `onDestroy`.
 
-```mermaid
-flowchart LR
-    Created --> Started --> Resumed
-    Resumed --> Paused --> Stopped
-    Stopped -->|return| Started
-    Stopped --> Destroyed
-```
+![Activity lifecycle with pause/resume and stop/restart paths; a Fragment can outlive several View instances.](../../assets/diagrams/activity-fragment-lifetimes.svg)
 
 A Fragment has both its own lifecycle and a separate lifecycle for its View. The Fragment may remain on a back stack after its View has been destroyed. UI references and observers should therefore follow `viewLifecycleOwner`. Pause does not universally mean invisible, especially in multi-window configurations; choose lifecycle thresholds based on the work's actual needs.
 

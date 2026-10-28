@@ -6,6 +6,8 @@
 
 ## Answer
 
+![State lifetime comparison for remember, retain, ViewModel, saved state, and durable storage.](../../assets/diagrams/state-lifetimes.svg)
+
 Use a ViewModel for screen state and business work that should survive configuration changes. Use `SavedStateHandle`, saved instance state, or a Compose saver for small values needed to reconstruct a screen after supported system restoration. Use a database, DataStore, or files for durable application data.
 
 For an editor, the selected record ID and a small input value may be saved state; a large document or durable draft should be persisted. A repository reloads authoritative data using that ID.

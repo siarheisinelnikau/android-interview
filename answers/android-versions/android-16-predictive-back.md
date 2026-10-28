@@ -2,11 +2,11 @@
 
 [Back to questions](../../README.md#android-versions)
 
-**Level:** Middle · **Topic:** Android Versions · **Version:** Android 16 (API 36) · **Reviewed:** 2026-10-28
+**Level:** Middle · **Topic:** Android Versions · **Version:** Android 16 (API 36) · **Reviewed:** 2026-10-29
 
 ## Answer
 
-For apps targeting API 36 and running on Android 16 or later, predictive-back system animations are enabled by default. Legacy `Activity.onBackPressed()` and `KEYCODE_BACK` interception are no longer the supported event path under that behavior.
+For apps targeting API 36 and running on Android 16 or later, predictive-back system animations are enabled by default. Under that default behavior, `Activity.onBackPressed()` is not called and `KEYCODE_BACK` is not dispatched. This is a callback-delivery change, not only a deprecation warning.
 
 Use AndroidX's back dispatcher and supported navigation integrations; in Compose, use the relevant BackHandler or predictive-back APIs for custom handling. Let the navigation owner handle ordinary stack popping rather than registering a competing callback for every composable.
 

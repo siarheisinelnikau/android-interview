@@ -6,6 +6,8 @@
 
 ## Answer
 
+![A consumer input connected to a producer output provider lets Gradle infer the task dependency.](../../assets/diagrams/gradle-provider-wiring.svg)
+
 Prefer expressing a real data relationship: connect a consumer's input property to a producer's output provider. Gradle can then infer the dependency and obtain the output at the correct time.
 
 ```kotlin

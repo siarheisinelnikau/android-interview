@@ -2,7 +2,7 @@
 
 [Back to questions](../../README.md#kotlin-versions)
 
-**Level:** Middle · **Topic:** Kotlin Versions · **Version:** Kotlin 2.4 · **Reviewed:** 2026-10-28
+**Level:** Middle · **Topic:** Kotlin Versions · **Version:** Kotlin 2.4 · **Reviewed:** 2026-10-29
 
 ## Answer
 

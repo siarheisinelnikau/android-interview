@@ -6,6 +6,8 @@
 
 ## Answer
 
+![Checkout depends on PaymentGateway; HttpPaymentGateway implements that contract. Source dependencies meet at the interface.](../../assets/diagrams/dependency-inversion.svg)
+
 SOLID describes five design principles:
 
 - **Single Responsibility:** group behavior that changes for the same reason. Formatting a receipt and charging a card need not share a class.

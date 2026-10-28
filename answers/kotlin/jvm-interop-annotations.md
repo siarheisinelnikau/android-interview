@@ -6,7 +6,7 @@
 
 ## Answer
 
-`@JvmStatic` generates a static bridge for an appropriate object or companion member. `@JvmField` exposes an eligible property as a field rather than only accessors. `@JvmOverloads` generates supported overloads for trailing default parameters so Java callers can omit them.
+`@JvmStatic` generates a static bridge for an appropriate object or companion member. `@JvmField` exposes an eligible property as a field rather than only accessors. `@JvmOverloads` generates overloads by progressively omitting default-valued parameters, working from right to left; it does not generate every named-argument combination. Required parameters remain required. For example, `fun draw(label: String, width: Int = 1)` gains a Java-callable `draw(String)` overload.
 
 Annotation use-site targets select where an annotation lands in the generated representation. A Kotlin property can correspond to a constructor parameter, field, getter, and setter; a framework inspecting fields may not see an annotation placed only on a parameter.
 
@@ -15,4 +15,5 @@ Use `@field:` or `@get:` when that distinction matters, then inspect generated b
 ## References
 
 - [Kotlin: calling Kotlin from Java](https://kotlinlang.org/docs/java-to-kotlin-interop.html)
+- [Kotlin API: JvmOverloads contract](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/)
 - [Kotlin: annotation use-site targets](https://kotlinlang.org/docs/annotations.html)

@@ -6,7 +6,11 @@ Each question has its own English answer. Answers explain the reasoning locally;
 
 Code snippets focus on the relevant idea and may omit imports or application-specific types. Review dates are recorded in version-specific answers; check API opt-ins and compatibility for your project.
 
-Mermaid diagrams render directly on GitHub. Choose a topic below to see its questions, then open a question to read its answer.
+All 270 answers were reviewed on **2026-10-29**. See [version notes](../docs/version-notes.md) for the verified release baseline and important compatibility distinctions.
+
+Local SVG illustrations display directly in 18 answers. Start with [OOP principles](oop/oop-principles.md), [composition vs. inheritance](oop/composition-vs-inheritance.md), [state lifetimes](android-core/state-storage-choices.md), [Compose phases](jetpack-compose/compose-phases-and-deferred-reads.md), or [Gradle caches](gradle-and-gradle-dsl/gradle-cache-layers.md). Each diagram has a text alternative.
+
+Choose a topic below to see its questions, then open a question to read its answer.
 
 - [OOP](../README.md#oop) (5 answers)
 - [Algorithms](../README.md#algorithms) (3 answers)

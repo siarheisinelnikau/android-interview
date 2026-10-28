@@ -10,7 +10,7 @@ On Android 8.0 and later, notifications are assigned to channels that users cont
 
 A PendingIntent is a token allowing another process to execute a predefined action with the creator's identity. Prefer immutable, explicit intents unless the receiver needs supported mutation. Request codes and intent identity influence whether an existing token is reused or updated.
 
-For ordinary app screens, build an appropriate parent stack with navigation support or TaskStackBuilder. Special-purpose activities may intentionally stand alone. Test taps when the app is absent, stopped, or already showing another screen. Notification permission, channel settings, and foreground service requirements are separate conditions.
+For ordinary app screens, build an appropriate parent stack with navigation support or TaskStackBuilder. Special-purpose activities may intentionally stand alone. Test taps when the process is not running, the Activity is stopped, or another screen is open. Distinguish these from force-stop: Android 15 cancels pending intents when the package enters its stopped state, so an old notification action is not a guaranteed relaunch path. Notification permission, channel settings, and foreground service requirements are separate conditions.
 
 ## References
 

@@ -2,7 +2,7 @@
 
 [Back to questions](../../README.md#jetpack-compose-versions)
 
-**Level:** Senior · **Topic:** Jetpack Compose Versions · **Reviewed:** 2026-10-28
+**Level:** Senior · **Topic:** Jetpack Compose Versions · **Reviewed:** 2026-10-29
 
 ## Answer
 
