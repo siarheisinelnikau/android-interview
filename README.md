@@ -3,6 +3,8 @@
 
 Select questions based on the role and the project's stack. RxJava, Koin, and Kotlin Multiplatform sections are optional.
 
+Version-specific questions were reviewed against official documentation on **2026-10-28**. Check the device OS, target SDK, library version, and API stability when discussing a feature.
+
 ---
 
 ### OOP
@@ -76,6 +78,46 @@ Select questions based on the role and the project's stack. RxJava, Koin, and Ko
 - **m** Photo Picker vs. Storage Access Framework - when would you use each? How do scoped storage and URI permissions affect file sharing?
 - **m** Difference between `minSdk`, `targetSdk`, and `compileSdk`. How do you prepare an app for a target SDK upgrade?
 - **s** How do you distinguish Android behavior changes affecting all apps from changes gated by `targetSdk`? How would you test both?
+- **j** Does a `Service` run on a separate thread or in a separate process by default? How would you move blocking work off its main thread?
+- **m** How do a Fragment's lifecycle and its view lifecycle affect observers, coroutines, and references to Views?
+- **m** Tasks, launch modes, and intent flags - how would you prevent duplicate screens when opening a notification or deep link?
+- **m** What does Binder do? Compare `Parcelable` and `Serializable`, and explain how oversized transactions can fail.
+- **m** How do notification channels and `PendingIntent`s work? How would you open the correct screen with a valid back stack?
+- **s** Force-stop vs. removing an app from Recents vs. system-initiated process death - how do they affect state and scheduled work?
+
+### Android Versions
+
+#### [Android 13 (API 33)](https://developer.android.com/about/versions/13/behavior-changes-13)
+
+- **m** How does the `POST_NOTIFICATIONS` permission affect ordinary notifications and foreground service notifications? Can a foreground service start if the permission is denied?
+- **m** How do granular media permissions replace `READ_EXTERNAL_STORAGE` for apps targeting API 33? When can the Photo Picker avoid requesting broad media access?
+
+#### [Android 14 (API 34)](https://developer.android.com/about/versions/14/behavior-changes-14)
+
+- **m** What foreground service types and type-specific permissions must an app declare when targeting API 34? How do while-in-use permissions affect background starts?
+- **m** How would you handle selected-photos access and changes to the user's selected media when targeting API 34?
+- **m** When must a context-registered receiver specify `RECEIVER_EXPORTED` or `RECEIVER_NOT_EXPORTED`? What is the exception for system broadcasts?
+
+#### [Android 15 (API 35)](https://developer.android.com/about/versions/15/behavior-changes-15)
+
+- **m** What changes for non-floating windows when an app targets API 35 on Android 15? How would you find inset and edge-to-edge regressions?
+- **s** How do time limits for `dataSync` and `mediaProcessing` foreground services work for apps targeting API 35? How should a service handle `onTimeout()`?
+- **m** What restrictions apply to starting foreground services from `BOOT_COMPLETED` when targeting API 35? How would you redesign affected work?
+
+#### [Android 16 (API 36)](https://developer.android.com/about/versions/16/behavior-changes-16)
+
+- **m** What happens to the edge-to-edge opt-out when an app targets API 36 and runs on Android 16? How does running that app on Android 15 differ?
+- **m** How does targeting API 36 on Android 16 affect legacy `onBackPressed()` and `KEYCODE_BACK` handling? Which supported APIs would you use instead?
+- **m** How do orientation, resizability, and aspect-ratio restrictions change on large screens when targeting API 36? What should you test in a portrait-only app?
+- **s** How do Android 16's [job quota changes](https://developer.android.com/about/versions/16/behavior-changes-all) affect WorkManager even without a target SDK upgrade? How would you diagnose stopped work?
+
+#### [Android 17 (API 37)](https://developer.android.com/about/versions/17/behavior-changes-17)
+
+- **m** When targeting API 37, why can local network access require more than the `INTERNET` permission? When can a system device picker replace broad network access?
+- **m** What happens to the large-screen orientation and resizability opt-out when targeting API 37? How would you verify adaptive behavior?
+- **s** How does the lock-free `MessageQueue` implementation for apps targeting API 37 affect code or SDKs that inspect private queue internals?
+- **s** How would you investigate Android 17's [app memory limits](https://developer.android.com/about/versions/17/behavior-changes-all) using `ApplicationExitInfo` and heap dumps? Do these limits depend on `targetSdk`?
+- **m** What changes for certificate transparency when targeting API 37? How would you investigate a TLS failure without bypassing certificate checks?
 
 ### Background Work
 
@@ -97,20 +139,45 @@ Select questions based on the role and the project's stack. RxJava, Koin, and Ko
 ### Jetpack Compose
 
 - **j** What is a composable function? How does declarative UI differ from updating Views directly?
+- **j** Compare `Row`, `Column`, and `Box`. How do alignment, arrangement, and `weight` affect a layout?
 - **j** What is recomposition, and what can trigger it?
 - **j** Compare `remember` and `rememberSaveable`. What happens after recreation or process death?
+- **m** How do call-site identity and `key` affect remembered state when composables are reordered or conditionally included?
+- **m** When do you need a custom `Saver`? Why should saved state contain small restoration inputs instead of an entire screen's data?
 - **m** State hoisting and unidirectional data flow - where should screen state and reusable component state live?
+- **m** Compare `compositionLocalOf` and `staticCompositionLocalOf`. When are explicit parameters preferable to a `CompositionLocal`?
 - **m** Why can mutating a regular list inside `mutableStateOf` fail to update the UI? Compare immutable updates and snapshot state collections.
+- **s** What do snapshot mutation policies control? How do structural equality, referential equality, and `neverEqualPolicy` affect invalidation?
 - **m** Why does modifier order matter? Compare padding before and after `clickable` or `background`.
 - **m** Compare `LaunchedEffect`, `DisposableEffect`, and `rememberCoroutineScope`. How do effect keys control cancellation and restarts?
+- **m** What does `produceState` provide? How would you adapt an external data source and clean it up when the producer leaves composition?
 - **m** When would you use `rememberUpdatedState` to avoid a stale value in a long-running effect?
 - **m** Compare `derivedStateOf` and `snapshotFlow`. What problem does each solve?
 - **m** How do item keys and `contentType` affect state and reuse in `LazyColumn` or `LazyVerticalGrid`?
+- **m** What contracts do `@Stable` and `@Immutable` declare? Why can incorrect annotations lead to stale UI?
 - **s** Explain stability, skipping, and strong skipping. Why is an unstable parameter not enough to conclude that a composable cannot be skipped?
 - **s** Composition, layout, and drawing - how would you locate expensive work and defer state reads to the appropriate phase?
+- **s** How do constraints flow through a custom `Layout`? Why is measuring a child repeatedly in one layout pass unsupported, and when are intrinsic measurements useful?
+- **m** Why can nesting a `LazyColumn` inside another vertically scrolling container fail with unbounded constraints? How would you structure the content?
+- **m** Compare state-based text fields using `TextFieldState` with the `value`/`onValueChange` approach. How do `InputTransformation` and `OutputTransformation` differ?
+- **m** Compare `animate*AsState`, `Animatable`, and `updateTransition`. How would you coordinate animations and handle interrupted gestures?
 - **m** Edge-to-edge layouts and `WindowInsets` - how do you handle system bars, display cutouts, and the keyboard?
 - **m** How would you adapt a screen to resizable windows, tablets, and foldables using window size classes and adaptive layouts?
 - **m** How do semantics, touch targets, focus order, and content descriptions affect accessibility?
+- **m** How would you use previews and preview parameters to check dark mode, large fonts, locales, and different screen sizes? What still needs a device test?
+
+### Jetpack Compose Versions
+
+Use the [Compose Runtime release notes](https://developer.android.com/jetpack/androidx/releases/compose-runtime) to check the version and stability of each API.
+
+- **m** How does the [Compose BOM](https://developer.android.com/develop/ui/compose/bom) align Runtime, UI, and Material 3 artifacts with different version numbers? Why is the compiler plugin configured separately?
+- **m** Runtime 1.9 - what do `@RememberInComposition` and `@FrequentlyChangingValue` help lint detect? Why move stability annotations into `runtime-annotation`?
+- **m** Runtime 1.10 - compare `retain`, `remember`, `rememberSaveable`, and `ViewModel`. Which lifetimes and restoration guarantees differ?
+- **s** Runtime 1.10 - why can retaining an Activity, View, or a key referencing them leak resources? What does `@DoNotRetain` communicate?
+- **s** Runtime 1.11 - what does the experimental `SlotTable` rewrite aim to improve? How would you benchmark an opt-in runtime change?
+- **s** Runtime 1.11 - what does experimental `SnapshotFlowManager` change when observing many `snapshotFlow` instances?
+- **m** Runtime 1.12 - when would keyed `SideEffect` replace a `LaunchedEffect` that performs no suspending work?
+- **s** How would you assess a move from Runtime 1.12 to a 1.13 beta? Does a stable library release guarantee every API is stable?
 
 ### Navigation
 
@@ -150,25 +217,59 @@ Select questions based on the role and the project's stack. RxJava, Koin, and Ko
 ### Kotlin
 
 - **j** `val` vs. `var`. Why does `val` not guarantee that an object is immutable?
+- **j** Compare final, open, and abstract classes, and interfaces. Which declarations can be overridden by default?
+- **j** Default and named arguments, `vararg`, and the spread operator - how do they affect a function's call sites?
 - **j** Nullable types, safe calls, Elvis operator, and `!!` - how do you work safely with missing values?
 - **m** What are platform types in Java interop? When is a smart cast unavailable?
 - **j** Compare `==` and `===`. How are `equals()` and `hashCode()` related?
 - **m** What do data classes generate? Why is `copy()` a shallow copy, and which properties participate in equality?
 - **j** Objects, companion objects, and top-level declarations - when would you use each?
+- **m** Nested vs. inner classes - which holds an outer instance, and how can that cause an Android memory leak?
 - **m** Compare enums, sealed classes, and sealed interfaces. How does an exhaustive `when` help model state?
 - **m** Visibility modifiers - what does `internal` mean, and how does it differ from Java package visibility?
 - **m** Read-only vs. mutable collections. Why is `List<T>` not a guarantee of immutability?
+- **m** Compare `IntArray` and `Array<Int>`. Where does boxing occur, and why can it matter in a hot path?
+- **m** How do `@JvmStatic`, `@JvmField`, and `@JvmOverloads` affect Java callers? When do annotation use-site targets such as `@field:` and `@get:` matter?
 - **m** Extension functions and properties - how are they resolved, and can they override members?
 - **m** Compare `let`, `run`, `with`, `apply`, and `also`. What are the risks of nesting scope functions?
 - **m** Compare `lateinit` and delegated properties such as `by lazy`. What thread-safety options does `lazy` provide?
 - **m** Higher-order functions, lambdas, and function types with receivers - how do they support a DSL?
+- **m** A function type vs. a `fun interface` - how do SAM conversion, identity, and Java interoperability affect the choice?
 - **s** Explain `inline`, `noinline`, `crossinline`, and reified type parameters. What limitations remain because of type erasure?
+- **s** Why can a public inline function not freely access private implementation details? How does `@PublishedApi` affect compatibility?
 - **s** Generics - declaration-site variance (`in`/`out`), type projections, and star projections. How do they relate to Java wildcards?
 - **m** Value classes vs. data classes and type aliases. When can a value class be boxed?
 - **m** Compare `Unit`, `Nothing`, and nullable return types. When is each useful?
+- **m** How does `use` manage a closeable resource when a block returns early or throws? Why can a lazily consumed `Sequence` escape the resource's lifetime?
 - **m** Exceptions and `Result` - how would you model expected failures without accidentally swallowing coroutine cancellation?
 - **s** What do context parameters solve compared with extension receivers and explicit parameters? How do they differ from the older context receivers feature?
 - **m** What does `@OptIn` mean? How would you evaluate the stability and compatibility of a Kotlin API before adopting it?
+
+### Kotlin Versions
+
+#### [Kotlin 2.0](https://kotlinlang.org/docs/whatsnew20.html)
+
+- **m** What changed with the stable K2 compiler? How would you investigate source compatibility or smart-cast changes during migration?
+- **m** Why does the Compose compiler Gradle plugin follow the Kotlin version? What changes when migrating from the old compiler extension setup?
+
+#### [Kotlin 2.1-2.2](https://kotlinlang.org/docs/whatsnew22.html)
+
+- **m** How do guard conditions in `when` simplify branching? What changed between their preview in 2.1 and stabilization in 2.2?
+- **m** When can non-local `break` and `continue` be used inside inline lambdas? How do they differ from returning from a lambda?
+- **m** What does multi-dollar string interpolation solve when embedding JSON, templates, or source code containing `$` characters?
+
+#### [Kotlin 2.3](https://kotlinlang.org/docs/whatsnew23.html)
+
+- **m** When are nested type aliases useful? Do they introduce a new type or capture an outer class's type parameters?
+- **s** What bugs can the experimental unused return value checker detect? How would you introduce it without hiding meaningful warnings?
+
+#### [Kotlin 2.4](https://kotlinlang.org/docs/whatsnew24.html)
+
+- **s** Which context-parameter capabilities became stable in 2.4? Why do explicit context arguments still need experimental opt-in?
+- **m** How do stable explicit backing fields let you expose `StateFlow` while keeping a `MutableStateFlow` field, without a second backing property?
+- **m** How do the stabilized annotation defaulting rules and `@all` meta-target affect constructor properties used by Android or validation frameworks?
+- **m** Experimental collection literals - how does the expected type affect `[]`, and when is a custom `operator fun of` needed?
+- **m** When would you choose the stable common `kotlin.uuid.Uuid` API over `java.util.UUID`? What would you check when migrating serialized identifiers?
 
 ### Kotlin Coroutines
 
