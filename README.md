@@ -3,7 +3,7 @@
 
 Select questions based on the role and the project's stack. RxJava, Koin, and Kotlin Multiplatform sections are optional.
 
-Version-specific questions were reviewed against official documentation on **2026-10-28**. Check the device OS, target SDK, library version, and API stability when discussing a feature.
+Review dates for version-specific questions are recorded in their answers. Check the device OS, target SDK, library version, and API stability when discussing a feature.
 
 Each question links to a self-contained answer in [answers/](answers/README.md), with examples and primary-source references.
 
@@ -342,6 +342,56 @@ Use the [Compose Runtime release notes](https://developer.android.com/jetpack/an
 - **m** [What do R8 shrinking, optimization, and obfuscation do? How do keep rules and mapping files help diagnose release-only failures?](answers/build-and-delivery/r8-and-release-only-failures.md)
 - **s** [How would you improve build speed using measurements, module boundaries, incremental processing, and Gradle caches?](answers/build-and-delivery/build-speed-investigation.md)
 - **s** [How would you check 16 KB page-size compatibility when an app or a third-party SDK includes native libraries?](answers/build-and-delivery/native-16kb-page-sizes.md)
+
+### Gradle and Gradle DSL
+
+#### Build lifecycle and scripts
+
+- **j** [What does the Gradle Wrapper pin? How would you upgrade and verify the build distribution?](answers/gradle-and-gradle-dsl/gradle-wrapper.md)
+- **j** [Explain Gradle initialization, configuration, and execution. Why can configuration-time work slow down an unrelated task?](answers/gradle-and-gradle-dsl/build-lifecycle.md)
+- **j** [What belongs in `settings.gradle.kts` versus `build.gradle.kts`? How do `pluginManagement` and `dependencyResolutionManagement` differ?](answers/gradle-and-gradle-dsl/settings-and-build-scripts.md)
+- **j** [Groovy DSL vs. Kotlin DSL - what changes, and is the build script Kotlin version the same as the app Kotlin version?](answers/gradle-and-gradle-dsl/groovy-vs-kotlin-dsl.md)
+- **m** [How do `plugins`, `apply false`, and Kotlin DSL type-safe accessors interact? Why can an `android` block be unavailable?](answers/gradle-and-gradle-dsl/plugins-and-type-safe-accessors.md)
+
+#### Tasks and lazy configuration
+
+- **m** [What is the difference between configuring a task and adding a `doLast` or `@TaskAction`? When does each piece of code run?](answers/gradle-and-gradle-dsl/task-configuration-vs-actions.md)
+- **m** [Compare `tasks.register`, `tasks.named`, and `configureEach` with eager task creation. What accidentally realizes tasks?](answers/gradle-and-gradle-dsl/lazy-task-registration.md)
+- **m** [Explain `Provider`, `Property`, `map`, `flatMap`, `convention`, and `set`. How can an early `get()` call break lazy wiring?](answers/gradle-and-gradle-dsl/providers-and-properties.md)
+- **m** [How do producer/consumer providers, `dependsOn`, `mustRunAfter`, and `finalizedBy` differ?](answers/gradle-and-gradle-dsl/task-dependencies-and-ordering.md)
+- **s** [How would you implement a deterministic custom task with declared inputs and outputs? When is `@CacheableTask` appropriate?](answers/gradle-and-gradle-dsl/custom-task-inputs-outputs.md)
+
+#### Caching and build logic
+
+- **m** [Distinguish `UP-TO-DATE` checks, the build cache, the configuration cache, and incremental task execution.](answers/gradle-and-gradle-dsl/gradle-cache-layers.md)
+- **s** [What makes a task incompatible with the configuration cache? How should it obtain files, environment values, and Gradle services?](answers/gradle-and-gradle-dsl/configuration-cache-compatible-tasks.md)
+- **m** [When would you use `buildSrc` or an included `build-logic` build for convention plugins? Why avoid broad cross-project configuration?](answers/gradle-and-gradle-dsl/buildsrc-vs-included-build-logic.md)
+- **s** [How would you test a convention plugin or custom task with Gradle TestKit, including configuration-cache and build-cache behavior?](answers/gradle-and-gradle-dsl/testing-gradle-plugins.md)
+
+#### Dependencies and resolution
+
+- **m** [Compare `api`, `implementation`, `compileOnly`, and `runtimeOnly`. How does dependency exposure affect consumers and recompilation?](answers/gradle-and-gradle-dsl/dependency-exposure-configurations.md)
+- **s** [What are declarable, resolvable, and consumable configurations? How does variant-aware resolution choose an Android library variant?](answers/gradle-and-gradle-dsl/configuration-roles-and-variants.md)
+- **m** [How would you diagnose an unexpected transitive dependency version? When are constraints or exclusions safer than forcing a version?](answers/gradle-and-gradle-dsl/dependency-conflict-investigation.md)
+- **m** [Why does a version catalog not enforce the resolved version? Compare a BOM, `platform`, `enforcedPlatform`, and dependency constraints.](answers/gradle-and-gradle-dsl/catalogs-platforms-and-constraints.md)
+- **m** [How do repository order, centralized repositories, and content filters affect dependency resolution and provenance?](answers/gradle-and-gradle-dsl/repository-policy-and-content-filters.md)
+- **s** [Dependency locking vs. dependency verification - what does each protect, and what else is needed for reproducible builds?](answers/gradle-and-gradle-dsl/dependency-locking-and-verification.md)
+
+#### Android toolchains and AGP
+
+- **m** [Distinguish the JDK running Gradle, Java toolchains, `sourceCompatibility`, `targetCompatibility`, and Kotlin `jvmTarget`. Which determines Android API availability?](answers/gradle-and-gradle-dsl/jdk-toolchain-and-bytecode-targets.md)
+- **m** [Language desugaring vs. core library desugaring - what problems do they solve, and why does a newer JVM target not make every Java API available?](answers/gradle-and-gradle-dsl/language-vs-library-desugaring.md)
+- **m** [AGP 9.0 - what changes with built-in Kotlin? How should `kapt`, compiler options, and KMP modules be migrated?](answers/gradle-and-gradle-dsl/agp-9-built-in-kotlin.md)
+- **s** [How do `finalizeDsl`, `beforeVariants`, `onVariants`, and artifact APIs replace `afterEvaluate` or hard-coded task names? What changes with AGP 9.0 public DSL types?](answers/gradle-and-gradle-dsl/agp-variant-and-artifact-apis.md)
+
+### Production Engineering
+
+- **m** [What should an Android CI pipeline validate before producing a release? How would you separate fast feedback from device and release checks?](answers/production-engineering/android-ci-pipeline.md)
+- **s** [How would you define staged-rollout health checks and recover from a bad release? What does halting a rollout actually undo?](answers/production-engineering/staged-rollout-and-recovery.md)
+- **s** [How would you correlate crashes, ANRs, performance regressions, and failed user journeys with a release without logging sensitive data?](answers/production-engineering/release-observability.md)
+- **m** [How would you design feature flags and remote configuration with safe defaults, offline behavior, and a useful kill switch?](answers/production-engineering/feature-flags-and-remote-config.md)
+- **s** [How do you evolve a backend API while old app versions remain installed? Which seemingly additive changes can break a mobile client?](answers/production-engineering/mobile-api-backward-compatibility.md)
+- **m** [How would you introduce lint or custom static-analysis rules without allowing an existing baseline to hide new violations?](answers/production-engineering/static-analysis-and-baselines.md)
 
 ### Security and Privacy
 

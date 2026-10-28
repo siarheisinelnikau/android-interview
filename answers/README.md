@@ -4,7 +4,7 @@
 
 Each question has its own English answer. Answers explain the reasoning locally; references provide supporting documentation.
 
-Code snippets focus on the relevant idea and may omit imports or application-specific types. Version-specific answers follow the documentation reviewed on **2026-10-28**; check API opt-ins and compatibility for your project.
+Code snippets focus on the relevant idea and may omit imports or application-specific types. Review dates are recorded in version-specific answers; check API opt-ins and compatibility for your project.
 
 Mermaid diagrams render directly on GitHub. Choose a topic below to see its questions, then open a question to read its answer.
 
@@ -33,5 +33,7 @@ Mermaid diagrams render directly on GitHub. Choose a topic below to see its ques
 - [Testing](../README.md#testing) (8 answers)
 - [Performance and Debugging](../README.md#performance-and-debugging) (6 answers)
 - [Build and Delivery](../README.md#build-and-delivery) (7 answers)
+- [Gradle and Gradle DSL](../README.md#gradle-and-gradle-dsl) (24 answers)
+- [Production Engineering](../README.md#production-engineering) (6 answers)
 - [Security and Privacy](../README.md#security-and-privacy) (5 answers)
 - [Kotlin Multiplatform (Optional)](../README.md#kotlin-multiplatform-optional) (3 answers)
